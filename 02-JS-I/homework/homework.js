@@ -161,13 +161,20 @@ function redondearNumero(num) {
 function redondearHaciaArriba(num) {
   // Redondea "num" hacia arriba (al próximo entero) y devuélvelo
   // Tu código:
-  return math.ceil (num);
+  var resto = num % 1;
+  var entero = num - resto
+  if (resto >= 0.1) {
+    return entero + 1
+  } else {
+    return entero
+  }
+  return math.ceil (num)
 }
 
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  return math.random (num);
+  return math.random();
 }
 
 function esPositivo(numero) {
@@ -181,7 +188,7 @@ function esPositivo(numero) {
     return "Es negativo";
   } 
   else {
-    return "false";
+    return false;
   }
 }
 
